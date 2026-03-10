@@ -32,7 +32,6 @@ const userSchema = new mongoose.Schema({
     fullName: { type: String, required: true, trim: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    // إضافة معرف احترافي يسهل قراءته
     customerId: { 
         type: String, 
         default: () => 'VOLT-' + Math.floor(1000 + Math.random() * 9000) 
