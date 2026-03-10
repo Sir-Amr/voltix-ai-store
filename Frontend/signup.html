@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>إنشاء حساب جديد - فولتكس</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="server.js"></script>
+<link rel="stylesheet" href="./style/signup.css">
+  </head>
+
+  <body>
+    <div class="w-full max-w-md">
+      <div class="text-center mb-8">
+        <div class="flex items-center justify-center gap-2 mb-4">
+          <div class="relative">
+            <div
+              class="absolute inset-0 bg-slate-900 rounded-lg blur-sm opacity-50"
+            ></div>
+            <div class="relative bg-slate-900 p-2 rounded-lg">
+              <i
+                data-lucide="zap"
+                class="w-6 h-6 text-yellow-400 fill-yellow-400"
+              ></i>
+            </div>
+          </div>
+          <span class="text-3xl font-bold tracking-tight text-slate-900">
+            VOLT<span class="text-yellow-500">IX</span>
+          </span>
+        </div>
+        <h1 class="text-2xl font-bold text-slate-900 mb-2">فولتكس</h1>
+        <p class="text-[#717182]">إنشاء حساب جديد</p>
+      </div>
+
+      <div class="voltix-card">
+        <form id="signUpForm" class="space-y-5">
+          <div>
+            <label for="fullName" class="block text-slate-900 mb-2"
+              >الاسم الكامل</label
+            >
+            <div class="relative">
+              <div
+                class="absolute right-4 top-1/2 -translate-y-1/2 text-[#717182]"
+              >
+                <i data-lucide="user" class="w-5 h-5"></i>
+              </div>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                class="w-full pr-12 pl-4 py-3 bg-[#f3f3f5] border border-[#0000001a] rounded-lg transition-all text-right"
+                placeholder="أحمد محمد"
+                required
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="email" class="block text-slate-900 mb-2"
+              >البريد الإلكتروني</label
+            >
+            <div class="relative">
+              <div
+                class="absolute right-4 top-1/2 -translate-y-1/2 text-[#717182]"
+              >
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </div>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="w-full pr-12 pl-4 py-3 bg-[#f3f3f5] border border-[#0000001a] rounded-lg transition-all text-right"
+                placeholder="ahmed@example.com"
+                required
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="password" class="block text-slate-900 mb-2"
+              >كلمة المرور</label
+            >
+            <div class="relative">
+              <div
+                class="absolute right-4 top-1/2 -translate-y-1/2 text-[#717182]"
+              >
+                <i data-lucide="lock" class="w-5 h-5"></i>
+              </div>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="w-full pr-12 pl-4 py-3 bg-[#f3f3f5] border border-[#0000001a] rounded-lg transition-all text-right"
+                placeholder="••••••••"
+                required
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="confirmPassword" class="block text-slate-900 mb-2"
+              >تأكيد كلمة المرور</label
+            >
+            <div class="relative">
+              <div
+                class="absolute right-4 top-1/2 -translate-y-1/2 text-[#717182]"
+              >
+                <i data-lucide="lock" class="w-5 h-5"></i>
+              </div>
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                class="w-full pr-12 pl-4 py-3 bg-[#f3f3f5] border border-[#0000001a] rounded-lg transition-all text-right"
+                placeholder="••••••••"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <div class="relative flex items-center h-6">
+              <input
+                type="checkbox"
+                id="acceptTerms"
+                name="acceptTerms"
+                class="peer w-5 h-5 border-2 border-[#717182] rounded appearance-none cursor-pointer checked:bg-[#030213] checked:border-[#030213] transition-all"
+                required
+              />
+              <i
+                data-lucide="check"
+                class="absolute left-0.5 top-0.5 text-white pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity w-4 h-4"
+              ></i>
+            </div>
+            <label
+              for="acceptTerms"
+              class="text-[#717182] text-sm cursor-pointer select-none"
+            >
+              أوافق على
+              <a href="#" class="text-[#030213] font-bold hover:underline"
+                >الشروط والأحكام</a
+              >
+              و
+              <a href="#" class="text-[#030213] font-bold hover:underline"
+                >سياسة الخصوصية</a
+              >
+            </label>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-[#030213] text-white py-3 rounded-lg hover:opacity-90 transition-opacity mt-6 font-medium cursor-pointer"
+          >
+            إنشاء حساب
+          </button>
+        </form>
+
+        <div class="text-center mt-6">
+          <p class="text-[#717182] text-sm">
+            لديك حساب بالفعل؟
+            <a
+              href="login.html"
+              class="text-[#030213] font-bold hover:underline"
+              >تسجيل الدخول</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <p class="text-center text-[#717182] mt-6 text-sm">
+        دفع آمن بواسطة فولتكس
+      </p>
+    </div>
+
+    <script src="./js/signup.js"></script>
+  </body>
+</html>
