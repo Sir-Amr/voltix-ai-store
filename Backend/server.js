@@ -11,7 +11,8 @@ const app = express();
 // إعدادات السيرفر الأساسية
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '..', 'Frontend')));
+const frontendPath = path.join(process.cwd(), "Frontend");
+app.use(express.static(frontendPath));
 // ================= CONFIGURATIONS =================
 
 // رابط الاتصال بـ MongoDB Atlas 
@@ -349,19 +350,16 @@ use_case:"برمجة وتصميم"
 
 // ================= ROUTES (PAGES) =================
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'Frontend', 'home.html'));
+    res.sendFile(path.join(frontendPath, "home.html"));
 });
-
 app.get('/products', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'Frontend', 'products.html'));
+    res.sendFile(path.join(frontendPath, "products.html"));
 });
-
 app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'Frontend', 'login.html'));
+    res.sendFile(path.join(frontendPath, "login.html"));
 });
-
 app.get('/signup', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'Frontend', 'signup.html'));
+    res.sendFile(path.join(frontendPath, "signup.html"));
 });
 // ================= DATABASE AUTH =================
 
