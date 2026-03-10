@@ -16,6 +16,7 @@ app.use(express.static(frontendPath));
 app.get("/", (req, res) => {
 res.sendFile(path.join(frontendPath, "home.html"));
 });
+console.log("Frontend path:", frontendPath);
 // ================= CONFIGURATIONS =================
 
 // رابط الاتصال بـ MongoDB Atlas 
@@ -352,17 +353,20 @@ use_case:"برمجة وتصميم"
 ]
 
 // ================= ROUTES (PAGES) =================
-app.get('/', (req, res) => {
-    res.sendFile(path.join(frontendPath, "home.html"));
+app.get("/", (req, res) => {
+res.sendFile(path.join(frontendPath, "home.html"));
 });
-app.get('/products', (req, res) => {
-    res.sendFile(path.join(frontendPath, "products.html"));
+
+app.get("/products", (req, res) => {
+res.sendFile(path.join(frontendPath, "products.html"));
 });
-app.get('/login', (req, res) => {
-    res.sendFile(path.join(frontendPath, "login.html"));
+
+app.get("/login", (req, res) => {
+res.sendFile(path.join(frontendPath, "login.html"));
 });
-app.get('/signup', (req, res) => {
-    res.sendFile(path.join(frontendPath, "signup.html"));
+
+app.get("/signup", (req, res) => {
+res.sendFile(path.join(frontendPath, "signup.html"));
 });
 // ================= DATABASE AUTH =================
 
