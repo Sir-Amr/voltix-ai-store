@@ -11,8 +11,11 @@ const app = express();
 // إعدادات السيرفر الأساسية
 app.use(cors());
 app.use(express.json());
-const frontendPath = path.join(process.cwd(), "Frontend");
+const frontendPath = path.join(__dirname, "../Frontend");
 app.use(express.static(frontendPath));
+app.get("/", (req, res) => {
+res.sendFile(path.join(frontendPath, "home.html"));
+});
 // ================= CONFIGURATIONS =================
 
 // رابط الاتصال بـ MongoDB Atlas 
